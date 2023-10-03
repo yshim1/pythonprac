@@ -51,6 +51,28 @@ e4.say_id()
 
 
 #Multiple inheritance
+"""
+There are 2 ways to invoke multiple inheritance. One is to make a class that directly inherits 2 classes. The other way is to 
+have a class inherit from a superclass that also inherits from another superclass (super-superclass)
+"""
+class Animal:
+  def __init__(self, name):
+    self.name = name
+ 
+  def say_hi(self):
+    print("{} says, Hi!".format(self.name))
+
+class Cat(Animal):
+  pass
+
+class Angry_Cat(Cat):
+  pass
+
+my_pet = Angry_Cat("Mr. Cranky")
+my_pet.say_hi() # Mr. Cranky says, Hi!
+
+
+
 class Employee():
   new_id = 1
   def __init__(self):
@@ -85,3 +107,13 @@ e1 = Employee()
 e2 = Employee()
 e3 = Admin()
 e3.say_user_info()
+
+"""
+Inheritance allow us to define a class that inherits all the methods and properties from another class. 
+The parent class is called the base class and the child class is called the derived class. 
+"""
+
+"""
+Python also supports multiple inheritance where one class can inherit from anu number of other classes. This allows us to 
+describe complex relationships between objects with minimal repeated code
+"""
