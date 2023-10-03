@@ -1,0 +1,45 @@
+General properties
+
+if f(n) is O(g(n)) then a * f(n) is O(g(n))
+example:
+f(n) = 2n^2 + 5 is O(n^2) then
+7 * f(n) = 7(2n^2 + 5) == 14n^2 + 35
+
+This is also true for Omega and theta
+
+
+Reflexive property:
+If f(n) is given, then f(n) is O(f(n))
+example: f(n) = n^2 then O(n^2)
+
+Transitive Property:
+if f(n)=O(g(n)) and g(n)=O(h(n)) then
+f(n) = O(h(n))
+example: f(n) = n, g(n) = n^2, h(n) = n^3
+
+n is O(n^2) and n^2 is O(n^3) then n is O(n^3)
+In other words, when g(n) is an upperbound for f(n) and h(n) is an upperbound for g(n) then g(n) is also an upperbound for f(n)
+
+
+symmetric Property (Only true for theta notation):
+if f(n) is theta(g(n)) then g(n) is theta(f(n))
+example:
+f(n) = n^2 and g(n) = n^2 then...
+f(n) = theta(n^2) and g(n) = theta(n^2)
+
+Transpose symmetric (True for omega and big O)
+if f(n) = O(g(n)) then g(n)=Omega(f(n))
+Example: 
+f(n) = n and g(n) = n^2
+
+n is O(n^2) and n^2 = Omega(n)
+
+
+Suppose f(n) = O(g(n)) and d(n) = O(e(n)), what would happen if we add f(n) + d(n)
+
+Assume f(n) = O(n) and d(n) = O(n^2)
+f(n) + d(n) = n^2 + n = O(n^2)
+It becomes O(max(g(n), e(n)))
+
+What would happen if we did f(n) * d(n)?
+Then O(g(n) * e(n))

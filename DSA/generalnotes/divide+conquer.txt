@@ -1,0 +1,15 @@
+def DAC(P):             DAC means divide and conquer and P is problem
+    if(small(P)):
+        S(P)            S meaning solve P
+    else:
+        divide P into p1, p2, p3....pk
+        Apply DAC(P1), DAC(P2), DAC(P3), DAC(P4)...
+        Combine DAC(P1), DAC(P2), DAC(P3), DAC(P4)
+
+
+Divide and Conquer 
+1. Binary Search
+2. Finding Maximum and Minimum
+3. MergeSort
+4. QuickSort
+5. Strassen's Matrix Multiplication

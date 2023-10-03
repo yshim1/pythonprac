@@ -1,0 +1,14 @@
+Comparison of Functions
+
+n^2 and n^3: How do you determine which is less than the other?
+
+Method 1: Apply log on both sides
+
+logn^2 is less than logn^3 or....
+2logn is less than 3logn
+
+logab = loga + logB
+log(a/b) = loga - logb
+loga^b = bloga
+a^logc(b) = b^logc(a)
+a^b = n then b = loga(n)
