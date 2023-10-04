@@ -15,8 +15,8 @@ def addGrade(student, grade):
     print(student['grades'])
 
 #Look at what calling addGrade function returns
-addGrade(chrisley, 90)
-addGrade(dallas, 100)
+addGrade(chrisley, 90) #OUTPUT>> [90]
+addGrade(dallas, 100) #OUTPUT>> [90,100]
 
 
 

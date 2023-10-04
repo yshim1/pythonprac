@@ -1,9 +1,6 @@
+num_collection = [3, 6, 9]
 
-year = 1909
-print(year%100)
-year2 = 1900
-print(year2%100)
+def power_two(*nums): 
+    print(nums**2)
 
-syear = str(year)
-print(syear[:2])
-print(int(syear[:2]))
+power_two(*num_collection)

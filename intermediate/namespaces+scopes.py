@@ -21,6 +21,14 @@ def greet():
     greeting = 'hello'
     print(greeting)
     print(locals())
+  
+global_variable = 'global'
+
+def add(num1, num2):
+  nested_value = 'Inside Function'   
+  print(num1 + num2)
+
+add(5, 10) 
     
 """
 We called locals() inside the add() function to get the local namespace generated 
@@ -81,11 +89,11 @@ print(str(calc_paint_amount(30,20)))
 
 
 def enclosing_function():
-  var = "value"
+  var = "value" #This is in the enclosing namespace
 
   def nested_function():
-    """nonlocal var"""  #Uncomment this line to change the value of var where the word after nonlocal is varname
-  var = "new_value"           #Enclosed immutable variables cannot be modified within nested functions unless using the nonlocal kw
+    nonlocal var  #Uncomment this line to change the value of var where the word after nonlocal is varname
+    var = "new_value"           #Enclosed immutable variables cannot be modified within nested functions unless using the nonlocal kw
 
   nested_function()
 
@@ -98,7 +106,7 @@ enclosing_function()
 gravity = 9.8
 
 def get_force(mass):
-  """global gravity"""  #Adding this line will allow us to modify the global variable gravity in our local scope. Can also be used to 
+  global gravity  #Adding this line will allow us to modify the global variable gravity in our local scope. Can also be used to 
                         #declare + assign a global variable within the local scope
   gravity += 100
   return mass * gravity
@@ -109,6 +117,7 @@ print(get_force(60))
 
 #LEGB RULE
 """
+Scope Resolution: a search procedure for a name in the various namespaces
 This rule shows the order in which the python will check namespaces to see if a name exists
 Local -> Enclosing -> Global -> Built-in Scope
 """
@@ -125,3 +134,41 @@ def func():
   inner_func() 
 
 func()
+
+
+"""
+Scope defines which namespaces our program will look in to (to check names) and in what order. While multiple
+namespaces usually exist at  once, this doe snot mean we can access all of them in different parts of our program
+
+Namespaces is the mechanism for storing name-object pairs, while scope will serve as a rule system on where we
+can retreive those names
+"""
+
+"""
+Local Scope:
+
+Calling a function will cause a local scope to be generated. Each subsequent function call will generate a new local scope
+Local scope is the deepest level. Names in the local scope cannot be access or modified by any code called in outer scoeps
+def favorite_color(): 
+  color = 'Red'         color can only be accessed within the function definition
+print(color) 
+"""
+
+#Enclosing/Nonlocal scope
+def outer_function():
+  enclosing_value = 'Enclosing Value'
+ 
+  def nested_function():
+    nested_value = 'Nested Value'
+    print(enclosing_value)
+  
+  nested_function()
+
+outer_function()
+"""
+In this example, the output of the print statement will be 'Enclosing Value'. This variable is able to be accessed
+by the enclosed functions.
+However, this can only be done going up, the deepest enclosed functions have access to items in the enclosing functions
+
+ALSO: immutable objects or numbers can be accessed in enclosed function but cannot be modified
+"""

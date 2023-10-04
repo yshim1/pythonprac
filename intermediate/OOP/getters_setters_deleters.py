@@ -1,7 +1,8 @@
 """
 Using getter, setter, and deleter functions are one 
 way to implement encapsulation within Python where 
-the state of class attributes can be handled within the class
+the state of class attributes can be handled within the class. These functions are useful in making sure
+that the data being handled is appropriate for the defined class functionality
 """
 class Animal:
   def __init__(self, name):
@@ -19,4 +20,4 @@ class Animal:
 
   def delete_age(self):
     print("_age Deleted")
-    del self._age
+    del self._age #del keyword is delete

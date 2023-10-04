@@ -21,7 +21,7 @@ class Employee():
         self.id = None
         # Write your code below
         self._id = None
-        self.__id = None #Name wrangling returns _Employee__id when dir(e) is called
+        self.__id = None #Name wrangling returns obj._Employee__id when dir(e) is called
 
 e = Employee()
 print(dir(e))
