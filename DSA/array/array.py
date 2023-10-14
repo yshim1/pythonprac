@@ -39,9 +39,10 @@ Access: O(1). Given an index, there is no need to search through array
 Search: O(n). Might need to traverse entire array
 Search (Sorted Array): O(log(n)). Binary search, starting at middle element.
 Insert: O(n). Requires shifting all subsequent elements to right by one which takes O(n)
-Insert at end: O(1). Special case of insertion where no other element needs to be shifted
+Insert at end: O(1). Special case of insertion where no other element needs to be shifted (amortized aka on average)
 Remove: O(n). Removal would require shifting all subsequent elements to the left by one
 which takes O(n)
+Copy O(n) time and space: traverse and create new
 Remove at end: O(1). Special case of removal where no other element needs to be shifted
 """
 

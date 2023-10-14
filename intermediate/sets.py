@@ -38,14 +38,14 @@ song_data = {'Retro Words': tag_set}
 # Create a set to hold the song tags
 song_tags = {'country', 'folk', 'acoustic'}
 
-# Add more tags using a hashable object (such as a list of elements)
+# Add more tags using a iterable object (such as a list of elements)
 other_tags = ['live', 'blues', 'acoustic']
 song_tags.update(other_tags)
 
 print(song_tags)
 
 #Removing from a set
-#removes value from a set, if value is not in set, key error is thrown
+#removes value from a set, if value is not in set, keyerror is thrown
 #discard works similarly but there is no exception if the value is not in the set
 song_data_users = {'Retro Words': ['pop', 'onion', 'warm', 'helloworld', 'happy', 'spam', 'electric']}
 
@@ -83,7 +83,7 @@ Differences (and difference updates)
 Symmetric Differences (and symmetric difference updates)
 """
 
-#Union
+#Union: returns all items that are in A and all items that are in B, and items that are in both
 prepare_to_py = {'rock', 'heavy metal', 'electric guitar', 'synth'}
 
 py_and_dry = frozenset({'classic', 'rock', 'electric guitar', 'rock and roll'})

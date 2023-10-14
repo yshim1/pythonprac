@@ -1,6 +1,7 @@
 #Recursion
 
-"""Recursion is a method of solving a computational problem where the solution depends on
+"""
+Recursion is a method of solving a computational problem where the solution depends on
 solutions to smaller instances of the same problem
 
 Two parts to recursive functions
@@ -17,7 +18,8 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 """
 Many algorithms relevant to coding interviews make heavy use of recursion 
--binary search, merge sort, tree traversal, depth-first search, etc."""
+-binary search, merge sort, tree traversal, depth-first search, etc.
+"""
 
 #Why recursion works
 """

@@ -34,12 +34,13 @@ Circular linked list
 A singly linked list where the last node points back to the first node. 
 There is a cicular doubly linked list variant where the prev pointer
 of the first node points to the last node and the next pointer of the last
-and the next poniter of the last node points to the first node"""
+and the next poniter of the last node points to the first node
+"""
 
 #Time complexity Operations
 """
 Access O(n)
-Search O(n)
+Search O(n) : Not indexed
 Insert O(1): Assumes you have traversed to the insertion position
 Remove O(1) Assumes you have traversed to the node to be removed
 """
@@ -100,4 +101,5 @@ Here are some common operations and how they can be achieved easily:
 Truncate a list - Set the next pointer to null at the last element
 Swapping values of nodes - Just like arrays, just swap the value of the two nodes, 
 there's no need to swap the next pointer
-Combining two lists - attach the head of the second list to the tail of the first list"""
+Combining two lists - attach the head of the second list to the tail of the first list
+"""

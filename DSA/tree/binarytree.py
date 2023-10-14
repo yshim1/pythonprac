@@ -25,3 +25,15 @@ completely filled, and all nodes in the last level are as far left as possible.
 Balanced Binary Tree - a binary tree structure in which the left and right subtrees of 
 every node differ in height by no more than 1
 """
+
+#Criteria for a tree
+"""
+1. MUST BE ACYCLIC
+2 MUST BE CONNECTED, for any given node in the graph, every node is reachable. All nodes are reachable through one path in the graph
+"""
+
+#Binary (Search) tree
+"""
+Binary tree is a tree that each node in it has a maximum of two children. A binary search tree is a binary tree which its elements positioned in special order
+In each BST all values in left sub tree are less than values in right sub tree
+"""
