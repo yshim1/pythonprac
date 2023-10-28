@@ -16,8 +16,10 @@ Matrix with only one row or column
 Creating an empty NxM matrix
 For questions involving traversal or dynamic programming, you almost always want to make a copy of the matrix with the
 same size/dimensions that is initialized to empty values to store the visited state or dynamic programming table."""
+
+matrix = [[1,2,3], [4,5,6]]
 #assumes that the matrix is non-empty
-zero_matrix = [[0 for _ in range(len(matrix[0]))] for _ in range(len(matrix))]
+zero_matrix = [[0 for x in range(len(matrix[0]))] for x in range(len(matrix))]
 #copying a matrix in python is
 copied_matrix = [row[:]for row in matrix]
 
@@ -31,3 +33,7 @@ one trick is to write code to verify the matrix for the horizontal cells, transp
 the logic for horizontal verification to verify originally vertical cells (which are now horizontal).
 """
 transposed_matrix = zip(*matrix)
+
+print(zero_matrix)
+print(copied_matrix)
+print(list(transposed_matrix))

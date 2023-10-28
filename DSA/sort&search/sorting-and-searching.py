@@ -22,10 +22,14 @@ Worst-case space complexity: O(n)
 Bubble Sort: O(n^2) Time, O(1) space
 Insertion Sort: O(n^2) Time, O(1) space
 Selection Sort: O(n^2) Time, O(1) space
-Quicksort: O(nlog(n)) time, O(log(n)) space
+Quicksort: O(nlog(n)) time (worst case is n^2), O(log(n)) space, inplace sort, unstable sort
 Mergesort: O(nlog(n)) time, O(n) space
-Heapsort: O(nlog(n)) time, O(1) space
-Couting sort: O(n+k) time, O(k) space
+
+Heapsort: O(nlog(n)) time, O(1) space, inplace sort, unstable sort
+
+Couting sort: O(n+k) time, O(k) space, assumes keys are integers in a fixed range, not comparison sort, stable sort
+For n items with integer keys in range of 0 to k-1
+
 Radix sort: O(nk) time, O(n+k) space"""
 #Corner case
 """
@@ -40,4 +44,30 @@ Sequence containing duplicate elements.
 Sorted inputs: When a sequence is in sorted order, binary search should be one of the first things in your mind
 Sorting an input that has limited range: Couting sort is a non comparison based sort you can use on number where you
 know the range of values before hand.
+"""
+
+#Classifications of Sorting Algorithms
+"""
+There are many ways to classigy a sorting algorithm
+-time complexity
+-space complexity: amount of memory algo needs to sort its input
+    an inplace algo operates directly on input and changes it. Generally O(1)
+    out of place algo copies input and makes sorting changes on copied version
+    
+-stability: stable algos preserve the relative order of elements when faced with an equal key (on the property by which the
+dataset is being sortd). In unstable algos, if two items are the same value, there is no guarantee that the relative order of elements
+will be the same order as before
+
+
+-internal vs external:
+    if all the items that need to be sorted are in the main memory/RAM, the algo is an internal sort
+    if the records to be sorted cannot be stored in main mem and the sorted data occurs outside of the main memory, such as on disk
+    the algo is external sort
+    
+-recursive vs nonrecursive: some algos do their sorting by divide and conquer. Its worth noting that most algos dont have
+to be implemented recursively
+
+comparison vs non comparison sort: any algo that compares two items or a pair at a time in the process of sorting through
+a larger dataset is referred to as a comparison sort. The subset of algorithms use some type of comparator to determine
+which of any two elements should be sorted first.
 """

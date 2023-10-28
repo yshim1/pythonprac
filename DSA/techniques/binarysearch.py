@@ -23,11 +23,15 @@ print(binarySearch(arr, 100)) #Returns NONE
 #What if the target is not in the array?
 
 #RECURSIVE METHOD
-def rbinarySearch(arr, target):
-    l = 0
-    h = len(arr-1)
-    if l == h:
-        return l
-    else:
-        return 0
-    
+def binary_search_recursive(arr, elem, start=0, end=None):
+    if end is None:
+        end = len(arr) - 1
+    if start > end:
+        return False
+    mid = (start + end) // 2
+    if elem == arr[mid]:
+        return mid
+    if elem < arr[mid]:
+        return binary_search_recursive(arr, elem, start, mid-1)
+    # elem > arr[mid]
+    return binary_search_recursive(arr, elem, mid+1, end)

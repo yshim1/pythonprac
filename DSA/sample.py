@@ -7,10 +7,10 @@
 #         hm[pattern[i]] = wordsList[i]
 # print(hm)
 
-s = "the sky is blue"
-wordsList = s.split()
-print(wordsList)
+# s = "the sky is blue"
+# wordsList = s.split()
+# print(wordsList)
 
-s2 = "  hello world  "
-words = s2.split()
-print(words)
+# s2 = "  hello world  "
+# words = s2.split()
+# print(words)
