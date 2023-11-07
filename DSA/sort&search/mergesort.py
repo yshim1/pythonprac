@@ -42,14 +42,14 @@ def mergeSort(A):
 
 # if __name__ == '__main__':
 # Generate 20 random numbers and sort them
-A = [random.randint(1, 100) for i in range(20)]
-print('This is the original random list')
-print(A)
-print('This is the sorted list')
-print(mergeSort(A))
+# A = [random.randint(1, 100) for i in range(20)]
+# print('This is the original random list')
+# print(A)
+# print('This is the sorted list')
+# print(mergeSort(A))
 
-B = [random.randint(0, 100) for x in range(2)]
-print('This is the original random list')
-print(B)
-print('This is the sorted list')
-print(mergeSort(B))
+# B = [random.randint(0, 100) for x in range(2)]
+# print('This is the original random list')
+# print(B)
+# print('This is the sorted list')
+# print(mergeSort(B))

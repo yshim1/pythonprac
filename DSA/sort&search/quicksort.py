@@ -15,33 +15,57 @@ will require a call stack of size O(logn)
 """
 
 # Function to find the partition position
-def partition(array, low, high):
-    # choose the rightmost element as pivot
-    pivot = array[high]
-    # pointer for greater element
-    i = low
-    # traverse through all elements
-    # compare each element with pivot
-    for j in range(low, high):
-        if array[j] <= pivot:
-            # Swapping element at i with element at j
-            (array[i], array[j]) = (array[j], array[i])
-            # If element smaller than pivot is found
-            # swap it with the greater element pointed by i
-            i = i + 1
-    # Swap the pivot element with the greater element specified by i
-    (array[i], array[high]) = (array[high], array[i])
-    # Return the position from where partition is done
-    return i
+# def partition(array, low, high):
+#     # choose the rightmost element as pivot
+#     pivot = array[high]
+#     # pointer for greater element
+#     i = low
+#     # traverse through all elements
+#     # compare each element with pivot
+#     for j in range(low, high):
+#         if array[j] <= pivot:
+#             # Swapping element at i with element at j
+#             (array[i], array[j]) = (array[j], array[i])
+#             # If element smaller than pivot is found
+#             # swap it with the greater element pointed by i
+#             i = i + 1
+#     # Swap the pivot element with the greater element specified by i
+#     (array[i], array[high]) = (array[high], array[i])
+#     # Return the position from where partition is done
+#     return i
 # function to perform quicksort
+
+def hoarePartition(A, low, high):
+    pivot_val = A[low]
+    i = low - 1
+    j = high + 1
+    while True:
+        while True:
+            i += 1
+            #increment until Fund value on left side greater than pviot
+            if A[i] >= pivot_val:
+                break
+        while True:
+            j -= 1
+            #increment until Find value on right side less than pivot
+            if A[j] <= pivot_val:
+                break
+        #once pointers overlap, return j which is location of new pivot
+        if i >= j:
+            return j
+        #Swap values when A[i] > pivot and A[j] is less than pivot
+        A[i], A[j] = A[j], A[i]
+    
 def quickSort(array, low, high):
     if low < high:
         # Find pivot element such that
         # element smaller than pivot are on the left
         # element greater than pivot are on the right
-        pi = partition(array, low, high)
+        pi = hoarePartition(array, low, high)
         # Recursive call on the left of pivot
-        quickSort(array, low, pi - 1)
+        # quickSort(array, low, pi - 1) #This is used when using lomuto partition
+        
+        quickSort(A, low, pi)
         # Recursive call on the right of pivot
         quickSort(array, pi + 1, high)
 
@@ -51,7 +75,7 @@ A = [random.randint(0, 100) for x in range(0, 20)]
 n = len(A)
 print('This is the list before sort')
 print(A)
-quickSort(A, 0, n - 1)
+quickSort(A, 0, n-1)
 print('This is the list after sort')
 print(A)
 

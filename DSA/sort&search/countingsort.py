@@ -10,6 +10,15 @@ assigning to each C[x] the sum of its prior value and all values in C that come 
 done for a given A[x] by assigning B[C[A[x]]] to A[x], and decrementing C[A[x]] in case there were duplicate
 values in the original unsorted array.
 """
+#Time and space
+"""
+We only use a count array of length O(k) which is the range of values in the input
+Time is O(n + k) because we iterate through the count array as well as the input array at least once
+"""
+#Other info
+"""
+Stable algorithm that is a non comparison
+"""
 
 def countingSort(A, k): # keys from 0 to k-1
     n = len(A)
@@ -18,27 +27,30 @@ def countingSort(A, k): # keys from 0 to k-1
     for key in A:
         count[key] += 1
     for i in range(1, k):
-        count[i] += count[i-1]
+        count[i] += count[i-1] #Transform count array into cumulative array that stores number of values <= x
     for key in reversed(A):
         output[count[key]-1] = key
         count[key] = count[key] - 1
     return output
 
-arr = [3,1,4,0,0,3]
+arr = [2,0,2,1,1,0]
+k = 3
+print(countingSort(arr, k))
 
-import random
-arr = countingSort(arr, 5)
-print(arr)
+# import random
+# arr = countingSort(arr, 5)
+# print(arr)
 
 
-n = 20
-k = 15
-A = []
-for i in range(0, n):
-    A.append(random.randint(0, k))
-print(A)
-A = countingSort(A, k)
-print(A)
+# n = 20
+# k = 15
+# A = []
+# for i in range(0, n):
+#     A.append(random.randint(0, k))
+# print(A)
+# A = countingSort(A, k)
+# print(A)
+
 
 
 

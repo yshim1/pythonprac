@@ -17,7 +17,7 @@ Creating an empty NxM matrix
 For questions involving traversal or dynamic programming, you almost always want to make a copy of the matrix with the
 same size/dimensions that is initialized to empty values to store the visited state or dynamic programming table."""
 
-matrix = [[1,2,3], [4,5,6]]
+matrix = [[1,2,3], [4,5,6], [7,8,9]]
 #assumes that the matrix is non-empty
 zero_matrix = [[0 for x in range(len(matrix[0]))] for x in range(len(matrix))]
 #copying a matrix in python is
@@ -32,8 +32,8 @@ like Tic-Tac-Toe, Connect 4 and Crosswords, where verification has to be done ve
 one trick is to write code to verify the matrix for the horizontal cells, transpose the matrix, and reuse 
 the logic for horizontal verification to verify originally vertical cells (which are now horizontal).
 """
-transposed_matrix = zip(*matrix)
+matrix = map(list, zip(*matrix))
 
 print(zero_matrix)
 print(copied_matrix)
-print(list(transposed_matrix))
+print(list(matrix))
