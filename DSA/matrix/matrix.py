@@ -32,8 +32,8 @@ like Tic-Tac-Toe, Connect 4 and Crosswords, where verification has to be done ve
 one trick is to write code to verify the matrix for the horizontal cells, transpose the matrix, and reuse 
 the logic for horizontal verification to verify originally vertical cells (which are now horizontal).
 """
-matrix = map(list, zip(*matrix))
+transposed_matrix = map(list, zip(*matrix))
 
 print(zero_matrix)
 print(copied_matrix)
-print(list(matrix))
+print(list(transposed_matrix))
